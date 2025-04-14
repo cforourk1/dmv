@@ -58,7 +58,7 @@ reference.
 8. What is the purpose of the `to_json` function used in the subquery?
 9. Complete `getPersonByIdIncludingLicense`.
 
-Once your code passes all test cases when you run `npm run test:persons`, move on
+Once your code passes all test cases when you run `npm run test persons`, move on
 to completing the queries in `db/queries/licenses.js`.
 
 10. Complete `getLicensesIncludingPerson`. Each license in the returned array of
