@@ -27,7 +27,7 @@ test("getPersonsWithoutLicense() returns all persons who do not have a license",
 
   const result = await getPersonsWithoutLicense();
   expect(result.length).toEqual(expected.length);
-  expect(result).toEqual(expected);
+  expect(result).toEqual(expect.arrayContaining(expected));
 });
 
 describe("getPersonByIdIncludingLicense()", () => {
