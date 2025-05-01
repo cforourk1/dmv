@@ -66,5 +66,5 @@ to completing the queries in `db/queries/licenses.js`.
     the information about the associated person.
 11. Complete `getLicenseByIdIncludingPerson`, which returns just one license with the
     associated person attached under the `person` key.
-12. Complete `getLicenseByPersonid`, which finds and returns the license by the person's
+12. Complete `getLicenseByPersonId`, which finds and returns the license by the person's
     id, rather than the license id. The related person does not need to be attached.
