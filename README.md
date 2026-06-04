@@ -54,8 +54,8 @@ reference.
    need to use an **outer join** and check if something `IS NULL`.
 7. `getPersonsIncludingLicense` uses a **subquery**, which is a query nested within
    another query, to grab license information while querying persons. What is the
-   **alias** defined for this subquery, as indicated by the `AS` keyword?
-8. What is the purpose of the `to_json` function used in the subquery?
+   **alias** defined for this subquery, as indicated by the `AS` keyword? license
+8. What is the purpose of the `to_json` function used in the subquery? to return it as an object
 9. Complete `getPersonByIdIncludingLicense`.
 
 Once your code passes all test cases when you run `npm run test persons`, move on

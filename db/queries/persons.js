@@ -24,7 +24,17 @@ export async function getPersonsWithLicense() {
 
 /** @returns all persons who do not have a license */
 export async function getPersonsWithoutLicense() {
-  // TODO
+  const sql = `
+  SELECT persons.*
+  FROM persons
+  LEFT JOIN licenses ON persons.id = licenses.person_id
+  WHERE
+  licenses.person_id IS NULL
+  `;
+  const {
+    rows: persons,
+  } = await db.query(sql);
+  return persons;
 }
 
 /** @returns all persons with their license attached if they have one */
@@ -60,5 +70,17 @@ export async function getPersonById(id) {
  * Their license is included if they have one.
  */
 export async function getPersonByIdIncludingLicense(id) {
-  // TODO
+  const sql = `
+  SELECT
+    *,
+    (
+      SELECT to_json(licenses)
+      FROM licenses
+      WHERE licenses.person_id = persons.id
+    ) AS license
+  FROM persons
+  WHERE persons.id =$1
+  `;
+  const { rows: [person] } = await db.query(sql, [id]);
+  return person;
 }
